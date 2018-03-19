@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' type="text/css" href='/stylesheets/bootstrap.min.css' />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+  </head>
+  <body>
+
+   <div class="panel-body">
+
+      <table class="table table-bordered table-striped">
+        
+        <thead>
+					<tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+						<th>E-mail</th>
+						<th>Birth Place</th>
+            <th></th>
+            <th></th>
+					</tr>
+				</thead>
+
+        <tbody>
+            <% for(var user of users) { %>
+              <tr>
+                <td class="text-center"><%= user.firstname %></td>
+                <td class="text-center"><%= user.lastname %></td>
+                <td class="text-center"><%= user.email %></td>
+                <td class="text-center"><%= user.birthplace %></td>
+                <td class="text-center">
+                  <a href="/user/<%= user._id %>" class="glyphicon glyphicon-pencil"></a> 
+                </td>
+                <td class="text-center">
+                  <a href="/remove/<%= user._id %>" class="glyphicon glyphicon-trash"></a> 
+                </td>
+              </tr>
+					 <% } %> 
+		    </tbody>
+
+      </table>
+
+       <div align="left" >
+          <a href="/" class="btn btn-primary btn-md" role="button" aria-disabled="true">Back</a>
+        </div>
+
+   </div>
+
+    <script type="text/javascript" src="/javascript/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="/javascript/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/javascript/jquery.maskMoney.min.js"></script>
+		<script type="text/javascript" src="/javascript/util.js"></script>
+
+  </body>
+</html>
